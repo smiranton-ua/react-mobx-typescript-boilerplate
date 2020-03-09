@@ -1,7 +1,6 @@
 import React from 'react';
 
-import RootStore from './stores/RootStore';
-
+import { RootStore } from './stores/store';
 import { ContextInterface, ProviderInterface } from './Context.interface';
 
 export const StoreContext = React.createContext<ContextInterface>({} as ContextInterface);

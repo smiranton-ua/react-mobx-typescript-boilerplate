@@ -1,38 +1,21 @@
-import React from 'react';
-import { observer } from 'mobx-react';
+import * as React from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
-import { StoreProvider } from './state/Context';
-import { useStores } from './hooks/stores';
+import { Module1Routes } from 'src/modules/module1';
+import { Module2Routes } from 'src/modules/module2';
 
-import './App.css';
+const appRoutes = [
+  ...Module1Routes,
+  ...Module2Routes
+];
 
-const App = observer(() => {
-  const { testStore } = useStores();
-
-  return (
-    <div className='App'>
-      <header className='App-header'>
-        {testStore.test && (
-          <h2>
-            Heyyyyy
-          </h2>
-        )}
-        <button
-          className='App-link'
-          type='button'
-          onClick={() => { testStore.change(); }}
-        >
-          Learn React
-        </button>
-      </header>
-    </div>
-  );
-});
-
-const Root = () => (
-  <StoreProvider>
-    <App />
-  </StoreProvider>
+const App: React.FC = () => (
+  <div className='App'>
+    <Switch>
+      {appRoutes.map((route: any) => route.component && <Route key={route.name} {...route} />)}
+      <Redirect from={'/'} to={'/module1'} />
+    </Switch>
+  </div>
 );
 
-export default Root;
+export default App;
