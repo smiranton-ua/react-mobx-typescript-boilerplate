@@ -1,26 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
+import { observer } from 'mobx-react';
+
+import { StoreProvider } from './state/Context';
+import { useStores } from './hooks/stores';
+
 import './App.css';
 
-function App() {
+const App = observer(() => {
+  const { testStore } = useStores();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className='App'>
+      <header className='App-header'>
+        {testStore.test && (
+          <h2>
+            Heyyyyy
+          </h2>
+        )}
+        <button
+          className='App-link'
+          type='button'
+          onClick={() => { testStore.change(); }}
         >
           Learn React
-        </a>
+        </button>
       </header>
     </div>
   );
-}
+});
 
-export default App;
+const Root = () => (
+  <StoreProvider>
+    <App />
+  </StoreProvider>
+);
+
+export default Root;
