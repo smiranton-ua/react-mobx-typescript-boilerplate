@@ -1,19 +1,26 @@
 import * as React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Switch, Redirect } from 'react-router-dom';
+
+import { PrivateRoute } from 'src/common';
+import { RouteInterface } from 'src/types/routes';
 
 import { Module1Routes } from 'src/modules/module1';
 import { Module2Routes } from 'src/modules/module2';
 
-const appRoutes = [
+import { PATH } from 'src/constants';
+
+const appRoutes: RouteInterface[] = [
   ...Module1Routes,
   ...Module2Routes
 ];
 
 const App: React.FC = () => (
-  <div className='App'>
+  <div className='app'>
     <Switch>
-      {appRoutes.map((route: any) => route.component && <Route key={route.name} {...route} />)}
-      <Redirect from={'/'} to={'/module1'} />
+      {appRoutes.map((route) => (
+        <PrivateRoute key={route.name} {...route} />
+      ))}
+      <Redirect from={PATH.ROOT} to={PATH.MODULE_ONE} />
     </Switch>
   </div>
 );
