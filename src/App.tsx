@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { Switch, Redirect } from 'react-router-dom';
 
+import { AppWrapper } from 'src/App.style';
 import { PrivateRoute } from 'src/common';
+
 import { RouteInterface } from 'src/types/routes';
 
 import { Module1Routes } from 'src/modules/module1';
@@ -15,14 +17,14 @@ const appRoutes: RouteInterface[] = [
 ];
 
 const App: React.FC = () => (
-  <div className='app'>
+  <AppWrapper>
     <Switch>
       {appRoutes.map((route) => (
         <PrivateRoute key={route.name} {...route} />
       ))}
       <Redirect from={PATH.ROOT} to={PATH.MODULE_ONE} />
     </Switch>
-  </div>
+  </AppWrapper>
 );
 
 export default App;
