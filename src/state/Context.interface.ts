@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Module1Store } from '../modules/module1';
-import { Module2Store } from '../modules/module2';
+import { store as Module1Store } from 'src/modules/module1';
+import { store as Module2Store } from 'src/modules/module2';
 
 export interface ContextInterface {
   module1Store: Module1Store;

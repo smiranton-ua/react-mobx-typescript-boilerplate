@@ -2,18 +2,18 @@ import * as React from 'react';
 import { Switch, Redirect } from 'react-router-dom';
 
 import { AppWrapper } from 'src/App.style';
-import { PrivateRoute } from 'src/common';
+import { PrivateRoute } from 'src/modules/auth';
 
 import { RouteInterface } from 'src/types/routes';
 
-import { Module1Routes } from 'src/modules/module1';
-import { Module2Routes } from 'src/modules/module2';
+import * as module1 from 'src/modules/module1';
+import * as module2 from 'src/modules/module2';
 
 import { PATH } from 'src/constants';
 
 const appRoutes: RouteInterface[] = [
-  ...Module1Routes,
-  ...Module2Routes
+  ...module1.routes,
+  ...module2.routes
 ];
 
 const App: React.FC = () => (

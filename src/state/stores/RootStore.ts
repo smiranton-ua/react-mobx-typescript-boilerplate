@@ -1,7 +1,7 @@
-import { Module1Store } from 'src/modules/module1';
-import { Module2Store } from 'src/modules/module2';
+import { store as Module1Store } from 'src/modules/module1';
+import { store as Module2Store } from 'src/modules/module2';
 
-export class RootStore {
+class RootStore {
   module1Store: Module1Store;
   module2Store: Module2Store;
 
@@ -10,3 +10,5 @@ export class RootStore {
     this.module2Store = new Module2Store();
   }
 }
+
+export default RootStore;

@@ -1,2 +1,4 @@
-export { default as Module1Routes } from './routes';
-export { default as Module1Store } from './store';
+export { default as routes } from './routes';
+export { default as store } from './store';
+
+export * from './components';
