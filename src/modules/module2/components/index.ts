@@ -1,1 +1,1 @@
-export { default as Module2 } from './Module2';
+export { default as Component } from './Component';

@@ -83,7 +83,8 @@ module.exports = {
     'no-useless-constructor': [0],
     'no-empty-function': [0],
     'consistent-return': [0],
-    'arrow-body-style': [0]
+    'arrow-body-style': [0],
+    'react/state-in-constructor': [0]
   },
   overrides: [
     {

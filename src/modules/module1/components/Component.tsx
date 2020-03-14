@@ -11,14 +11,15 @@ const Module1 = () => {
   return (
     <div>
       <div className='App'>
-        Module One {test}
+        Module One
+        {test}
       </div>
-      <button onClick={change}>
+      <div onClick={change}>
         test
-      </button>
-      <button onClick={() => { history.push('/module2'); }}>
+      </div>
+      <div onClick={() => { history.push('/module2'); }}>
         go to module 2
-      </button>
+      </div>
     </div>
   );
 };
