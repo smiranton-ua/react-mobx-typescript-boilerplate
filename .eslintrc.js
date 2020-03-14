@@ -84,7 +84,8 @@ module.exports = {
     'no-empty-function': [0],
     'consistent-return': [0],
     'arrow-body-style': [0],
-    'react/state-in-constructor': [0]
+    'react/state-in-constructor': [0],
+    'prefer-promise-reject-errors': [0]
   },
   overrides: [
     {
