@@ -1,9 +1,17 @@
-import { api } from 'src/utils';
+// import { api } from 'src/utils';
 
-class ModuleApi {
-  fetchTest() {
-    return api.get('test');
+class AuthApi {
+  public fetchUserInfo() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          id: 1,
+          name: 'Anton',
+          roles: []
+        });
+      }, 1000);
+    });
   }
 }
 
-export default new ModuleApi();
+export default new AuthApi();

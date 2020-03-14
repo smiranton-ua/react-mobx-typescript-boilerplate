@@ -3,12 +3,17 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
 import { StoreProvider } from 'src/state/Context';
-import App from 'src/App';
+import { CheckAuth } from 'src/modules/auth';
+import { Loadable } from 'src/common';
+
+const App = Loadable(() => import('./App'));
 
 ReactDOM.render(
   <BrowserRouter>
     <StoreProvider>
-      <App />
+      <CheckAuth>
+        <App />
+      </CheckAuth>
     </StoreProvider>
   </BrowserRouter>,
   document.getElementById('root')
