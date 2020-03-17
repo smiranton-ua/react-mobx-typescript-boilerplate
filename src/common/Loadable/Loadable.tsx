@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { AsyncCompInterface, PropsInterface } from './Loadable.interface';
+import { AsyncCompInterface, PropsInterface } from './Loadable.types';
 
 const Loadable = (AsyncCompFactory: AsyncCompInterface, FallbackComp = null) => {
   const AsyncComp = React.lazy(AsyncCompFactory);

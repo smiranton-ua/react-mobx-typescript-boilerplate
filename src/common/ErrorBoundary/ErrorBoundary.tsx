@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { PropsInterface, StateInterface } from './ErrorBoundary.interface';
 import { Wrapper } from './ErrorBoundary.style';
+import { PropsInterface, StateInterface } from './ErrorBoundary.types';
 
 const DEFAULT_ERROR_MESSAGE = 'Oops! an error occurred!';
 
@@ -46,7 +46,7 @@ export default class ErrorBoundary extends React.Component<PropsInterface, State
     if (error) {
       return this.renderError();
     }
-    
+
     return children;
   }
 }
