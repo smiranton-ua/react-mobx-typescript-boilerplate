@@ -12,7 +12,7 @@ const CheckAuth: React.FC<Props> = ({ children }) => {
 
   React.useEffect(() => {
     checkUserAuth();
-  }, []);
+  });
 
   if (loading) {
     return (

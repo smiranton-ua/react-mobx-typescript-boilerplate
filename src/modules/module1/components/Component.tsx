@@ -4,12 +4,17 @@ import { useHistory } from 'react-router';
 
 import { useModule1Store } from '../hooks';
 
+import svg from 'src/assets/svg/test.svg';
+import img from 'src/assets/images/test.jpg';
+
 const Module1 = () => {
   const history = useHistory();
   const { test, change } = useModule1Store();
 
   return (
     <div>
+      <img alt='svg' src={svg} />
+      <img alt='img' src={img} />
       <div className='App'>
         Module One
         {test}

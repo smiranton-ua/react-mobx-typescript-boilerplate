@@ -86,7 +86,8 @@ module.exports = {
     'arrow-body-style': [0],
     'react/state-in-constructor': [0],
     'prefer-promise-reject-errors': [0],
-    'react-hooks/exhaustive-deps': [0]
+    'react-hooks/exhaustive-deps': [0],
+    'import/order': [0]
   },
   overrides: [
     {
