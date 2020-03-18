@@ -20,6 +20,9 @@ const App: React.FC = () => (
   <>
     <Switch>
       {appRoutes.map((route) => (
+
+
+
         <PrivateRoute key={route.name} {...route} />
       ))}
       <Redirect from={PATH.ROOT} to={PATH.MODULE_ONE} />

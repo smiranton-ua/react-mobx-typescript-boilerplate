@@ -13,8 +13,13 @@ const instance = axios.create({
 
 instance.interceptors.response.use(
   (res: AxiosResponse) => res,
+
+
+
+
+
   (error: Error) => {
-    return Promise.reject({
+        return Promise.reject({
       extended: get(error, 'response.data.error.extended', {}),
       message: get(error, 'response.data.error.message', error),
       code: get(error, 'response.data.error.errcode', 0)
